@@ -295,7 +295,7 @@ body.dark-theme {
 .main-content{
   width: 100%;
   background-color: #ffffff;
-  padding: 80px 50px;
+  padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
 }

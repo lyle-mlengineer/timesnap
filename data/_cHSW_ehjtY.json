@@ -1,0 +1,62 @@
+{
+    "video_id": "_cHSW_ehjtY",
+    "title": "Python SQLAlchemy ORM - Events & Listeners",
+    "timestamps": [
+        {
+            "timestamp": "00:00",
+            "title": "Intro"
+        },
+        {
+            "timestamp": "00:13",
+            "title": "Event Life Cycle"
+        },
+        {
+            "timestamp": "00:15",
+            "title": "Triggered Events"
+        },
+        {
+            "timestamp": "00:54",
+            "title": "Events & Listeners"
+        },
+        {
+            "timestamp": "03:22",
+            "title": "Setup"
+        },
+        {
+            "timestamp": "03:48",
+            "title": ".listen()"
+        },
+        {
+            "timestamp": "05:33",
+            "title": "Multiple Event Listeners"
+        },
+        {
+            "timestamp": "05:56",
+            "title": ".listens_for()"
+        },
+        {
+            "timestamp": "06:25",
+            "title": "Another .listens_for() Example"
+        },
+        {
+            "timestamp": "07:57",
+            "title": "Another .listens_for() Example"
+        },
+        {
+            "timestamp": "09:21",
+            "title": ".contains()"
+        },
+        {
+            "timestamp": "10:19",
+            "title": ".remove()"
+        },
+        {
+            "timestamp": "10:57",
+            "title": "More Events"
+        },
+        {
+            "timestamp": "13:18",
+            "title": "Outro"
+        }
+    ]
+}

@@ -1,7 +1,11 @@
-fastapi
+fastapi[standard]
 uvicorn
+asyncpg
+python-dotenv
 sqlalchemy
-alembic
+pyjwt
+passlib[bcrypt]
 psycopg2-binary
-pydantic-settings
 jinja2
+pygments
+tubectrl

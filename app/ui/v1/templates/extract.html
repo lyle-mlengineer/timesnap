@@ -9,17 +9,24 @@
 
 <div class="main-content">
 
-            <div class="search-box">
-               <input
-                  type="text"
-                  placeholder="Enter the video url"
-                  id="inp-word"
-               />
-               <button id="search-btn">Search</button>
-            </div>
+   <form action="/extract" method="post" class="extract-form" id="extract-form">
+      <input
+         type="text"
+         placeholder="Enter the video url"
+         id="inp-word"
+         name="videourl"
+      />
+      <button id="extract-btn" type="submit" class="extract-btn">Extract</button>
+   </form>
 
-            <div class="result" id="result"></div>
 
-         </div>
+   <div class="result" id="result"></div>
 
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+        {{ super() }} {# Optional: to include scripts from the parent block if any #}
+        <script src="{{ url_for('static', path='js/extractor.js') }}"></script>
 {% endblock %}

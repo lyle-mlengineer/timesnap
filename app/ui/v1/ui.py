@@ -21,7 +21,7 @@ async def get_landing_page(request: Request):
         }
     )
 
-@router.get('/extract', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
+@router.get('/extract_page', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
 async def get_timestamps_extraction_page(request: Request):
     """Load the timestamps extraction page page"""
     return templates.TemplateResponse(

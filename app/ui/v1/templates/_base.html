@@ -62,7 +62,7 @@
                   <h3 class="sidebar__title">PRODUCTS</h3>
 
                   <div class="sidebar__list">
-                     <a href="/extract" class="sidebar__link {% if current_page == 'extract' %} active-link {% endif %}">
+                     <a href="/extract_page" class="sidebar__link {% if current_page == 'extract' %} active-link {% endif %}">
                         <i class="ri-voice-recognition-fill"></i>
                         <span>Extract Timestamps</span>
                      </a>
@@ -149,5 +149,7 @@
       
       <!--=============== MAIN JS ===============-->
       <script src="{{ url_for('static', path='js/main.js') }}"></script>
+       <script src="{{ url_for('static', path='js/extractor.js') }}"></script>
+      {% block scripts %}{% endblock %}
    </body>
 </html>
