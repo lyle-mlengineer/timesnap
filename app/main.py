@@ -21,3 +21,4 @@ app.include_router(extraction.router)
 
 # Mount static folder
 app.mount("/static", StaticFiles(directory=config.static_dir), name="static")
+app.mount("/data", StaticFiles(directory=config.DATA_DIR), name="data")

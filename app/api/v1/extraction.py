@@ -17,7 +17,7 @@ DEFAULT_STYLE = "monokai"
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-async def extract(videourl: Annotated[str, Form()], request: Request, style: str = DEFAULT_STYLE):
+async def extract(videourl: Annotated[str, Form()], request: Request, style: Annotated[str, Form()] = DEFAULT_STYLE):
     code, extraction = await extract_video_timestamps(videourl)
     formatter = HtmlFormatter(style=style)
     context = {
@@ -26,8 +26,9 @@ async def extract(videourl: Annotated[str, Form()], request: Request, style: str
         "style_definitions": formatter.get_style_defs(),
         "style_bg_color": formatter.style.background_color,
         "highlighted_code": highlight(code, PythonLexer(), formatter),
+        "code": code,
         "num_lines": len(code.split("\n")),
         "file_name": extraction.video_id + ".json",
-        "file_path": request.url_for("static", path=f"data/{extraction.video_id}.json"),
+        "file_path": request.url_for("data", path=f"{extraction.video_id}.json"),
     }
     return context

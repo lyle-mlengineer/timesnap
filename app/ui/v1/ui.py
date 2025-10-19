@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from app.core.config import config
+from pygments.styles import get_all_styles
 
 
 templates = Jinja2Templates(directory=config.templates_dir)
@@ -29,7 +30,8 @@ async def get_timestamps_extraction_page(request: Request):
         {
             "request": request,
             "title": "Extract Timestamps - TimeSnap",
-            "current_page": "extract"
+            "current_page": "extract",
+            "all_styles": list(get_all_styles())
         }
     )
 

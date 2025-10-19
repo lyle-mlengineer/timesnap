@@ -21,7 +21,7 @@ class Config(BaseSettings):
     CLIENT_SECRET_FILE: str = os.environ.get(
         "CLIENT_SECRET_FILE", "C:/Users/Computer Forensics/Downloads/secret.json"
     )
-    DATA_DIR: str = os.environ.get("DATA_DIR", os.path.join("C:/Users/Computer Forensics/Desktop/Git/timesnap", "data"))
+    DATA_DIR: str = "app/api/v1/data"
 
     @property
     def db_url(self):
