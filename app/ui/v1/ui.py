@@ -48,6 +48,17 @@ async def get_api_keys_page(request: Request):
         }
     )
 
+@router.get('/create_api_key', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
+async def create_api_key_page(request: Request):
+    """Load the text to speech page"""
+    return templates.TemplateResponse(
+        "create_api_key.html", 
+        {
+            "request": request,
+            "title": "Create a new API Key - TimeSnap",
+        }
+    )
+
 @router.get('/notifications', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
 async def get_notifications_page(request: Request):
     """Load the text to notifications page"""

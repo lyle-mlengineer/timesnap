@@ -1,4 +1,46 @@
 {%extends "_base.html" %} 
+
+{% block styles %}
+    {{ super() }} {# This includes the CSS from the parent's 'styles' block #}
+    <link rel="stylesheet" href="{{ url_for('static', path='css/api_keys.css') }}">
+{% endblock %}
+
 {%block content%}
 
+
+<div class="main-content">
+
+   <header class="header__gen">
+
+      <div class="logo-wrapper">
+         <div class="gen__logo">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+         </div>
+         <h1>API Keys</h1>
+      </div>
+
+      <a href="/create_api_key" class="create-btn">
+         <i class="fa-solid fa-plus"></i>
+         Create New API Key
+      </a>
+
+      <!-- <button class="create-btn">
+            <i class="fa-solid fa-plus"></i>
+            Create New API Key
+      </button> -->
+
+   </header>
+
+   <div class="api-key-container">
+        
+   </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+        {{ super() }} {# Optional: to include scripts from the parent block if any #}
+        <script src="{{ url_for('static', path='js/api_keys.js') }}"></script>
 {% endblock %}
