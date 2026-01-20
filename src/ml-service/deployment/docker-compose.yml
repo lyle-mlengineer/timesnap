@@ -1,0 +1,14 @@
+services:
+  ml_service:
+    build: .
+    container_name: savannafaces_ml_service
+    env_file:
+      - .env
+    ports:
+      - "8001:8000"
+    networks:
+      - savannafaces_network
+
+networks:
+  savannafaces_network:
+    driver: bridge

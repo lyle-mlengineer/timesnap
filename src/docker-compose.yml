@@ -1,0 +1,51 @@
+services:
+  db:
+    env_file:
+      - .db.env
+    image: postgres:latest
+    container_name: generation_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - savannafaces_network
+
+  cache:
+    image: redis:latest
+    container_name: generation_cache
+    ports:
+      - "6380:6379"
+    networks:
+      - savannafaces_network
+
+  ml_service:
+    build: ./ml-service/deployment/
+    container_name: generation_ml_service
+    env_file:
+      - .ml.env
+    ports:
+      - "8001:8000"
+    networks:
+      - savannafaces_network
+
+  web:
+    build: ./web-service/
+    container_name: generation_web
+    env_file:
+      - .web.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - cache
+      - ml_service
+    networks:
+      - savannafaces_network
+
+networks:
+  savannafaces_network:
+    driver: bridge
+
+volumes:
+  pgdata:
