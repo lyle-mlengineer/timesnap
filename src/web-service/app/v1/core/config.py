@@ -20,7 +20,7 @@ class Config(BaseSettings):
     TEMPLATES_DIR: str = "app/v1/ui/templates"
     STATIC_DIR: str = "app/v1/ui/static"
 
-    DATA_DIR: str = os.environ.get("DATA_DIR", "app/v1/data/images")
+    DATA_DIR: str = os.environ.get("DATA_DIR", "app/v1/data/timestamps")
 
     GOOGLE_DRIVE_FOLDER_ID: str = os.environ["GOOGLE_DRIVE_FOLDER_ID"]
     GOOGLE_DRIVE_CREDENTIALS: str = os.environ["GOOGLE_DRIVE_CREDENTIALS"]
