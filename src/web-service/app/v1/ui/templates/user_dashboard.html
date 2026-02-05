@@ -1,0 +1,225 @@
+{%extends "_base.html" %} 
+
+    {% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', path='css/user_dashboard.css') }}">
+    {% endblock %}
+
+{%block content%}
+
+<div class="dashboard">
+
+    <div class="dashboard-header"> 
+        <div class="left"> 
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
+                <li><a href="#">
+                        User
+                    </a></li>
+                /
+                <li><a href="#" class="dashboard-active">Analytics</a></li>
+            </ul>
+        </div>
+        <a href="/extract" class="report">
+            <i class='bx bx-image'></i>
+            <span>Extract Timestamps</span>
+        </a>
+    </div>
+
+    <!-- Insights -->
+    <ul class="insights">
+        <li>
+            <i class='bx bx-images'></i>
+            <span class="info">
+                <h3>
+                    1,074
+                </h3>
+                <p>Timestamps Extracted</p>
+            </span>
+        </li>
+        <li><i class='bx bx-dollar-circle'></i>
+            <span class="info">
+                <h3>
+                    3,944
+                </h3>
+                <p>Credits Purchased</p>
+            </span>
+        </li>
+        <li><i class='bx bx-line-chart'></i>
+            <span class="info">
+                <h3>
+                    14,721
+                </h3>
+                <p>Credits Used</p>
+            </span>
+        </li>
+        <li><i class='bx bx-dollar-circle'></i>
+            <span class="info">
+                <h3>
+                    $6,742
+                </h3>
+                <p>Credits Remaining</p>
+            </span>
+        </li>
+    </ul>
+    <!-- End of Insights -->
+
+    <div class="bottom-data">
+
+        <div class="orders">
+            <div class="synthesis-header">
+                <!-- <i class='bx bx-receipt'></i> -->
+                <h3>Recent Extractions</h3>
+                <a href="/extract" class="report">
+                    <i class='bx bx-image'></i>
+                    <span>Extract Timestamps</span>
+                </a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Video</th>
+                        <th>Date Extracted</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td class="actions">
+                            <i class="ri-delete-bin-5-line delete"></i>
+                            <i class="ri-download-fill edit"></i>
+                            <i class="ri-eye-line view"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td class="actions">
+                            <i class="ri-delete-bin-5-line delete"></i>
+                            <i class="ri-download-fill edit"></i>
+                            <i class="ri-eye-line view"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td class="actions">
+                            <i class="ri-delete-bin-5-line delete"></i>
+                            <i class="ri-download-fill edit"></i>
+                            <i class="ri-eye-line view"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td class="actions">
+                            <i class="ri-delete-bin-5-line delete"></i>
+                            <i class="ri-download-fill edit"></i>
+                            <i class="ri-eye-line view"></i>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Reminders -->
+        <div class="reminders">
+
+            <div class="reminders-header">
+            <!-- <i class='bx bx-note'></i> -->
+            <h3>Credits </h3>
+            <i class='bx bx-dots-vertical-rounded'></i>
+            <!-- <i class='bx bx-filter'></i> -->
+            <!-- <i class='bx bx-plus'></i> -->
+            </div>
+
+            <div class="credits">
+            <div class="credits-data">
+                <i class='bx bx-dollar-circle high'></i>
+                <span class="credits__info">
+                        <h3>
+                        15 / 20
+                        </h3>
+                        <p>Credits Used</p>
+                </span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+            </div>
+
+            </div>
+
+            <div class="purchase-credits">
+            <div class="credits-header">
+                <!-- <i class='bx bx-receipt'></i> -->
+                <h3>Recent Extractions</h3>
+                <a href="/purchase_credits" class="report">
+                        <i class='bx bx-cart'></i>
+                        <span>Purchase Credits</span>
+                </a>
+            </div>
+
+            <table>
+                <thead>
+                        <tr>
+                        <th>Transaction ID</th>
+                        <th>Date</th>
+                        <th>Purchase</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td>Basic</td>
+                        <td>100</td>
+                        <td class="status completed">Completed</td>
+                        </tr>
+                        <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td>Basic</td>
+                        <td>100</td>
+                        <td class="status completed">Completed</td>
+                        </tr>
+                        <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td>Pro</td>
+                        <td>500</td>
+                        <td class="status completed">Completed</td>
+                        </tr>
+
+                        <tr>
+                        <td>videoid</td>
+                        <td>14-08-2023</td>
+                        <td>Premium</td>
+                        <td>200</td>
+                        <td class="status completed">Completed</td>
+                        </tr>
+
+                </tbody>
+            </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='js/user_dashboard.js') }}"></script>
+{% endblock %}

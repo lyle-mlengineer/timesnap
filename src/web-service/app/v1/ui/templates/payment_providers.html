@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Providers</title>
+</head>
+
+<body>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+     <link rel="stylesheet" href="{{ url_for('static', path='css/payment_providers.css') }}">
+     <div class="container">
+        <div class="title">
+            <h4>Select a <span style="color: #6064b6">Payment</span> method</h4>
+        </div>
+
+        <form action="/checkout" method="post">
+            <input type="radio" name="payment" id="visa" value="stripe">
+            <input type="radio" name="payment" id="mastercard" value="stripe">
+            <input type="radio" name="payment" id="paypal" value="stripe">
+            <input type="radio" name="payment" id="mpesa" value="mpesa">
+
+
+            <div class="category">
+                <label for="visa" class="visaMethod">
+                    <div class="imgName">
+                        <div class="imgContainer visa">
+                            <img src="https://i.ibb.co/vjQCN4y/Visa-Card.png" alt="">
+                        </div>
+                        <span class="name">VISA</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                </label>
+
+                <label for="mastercard" class="mastercardMethod">
+                    <div class="imgName">
+                        <div class="imgContainer mastercard">
+                            <img src="https://i.ibb.co/vdbBkgT/mastercard.jpg" alt="">
+                        </div>
+                        <span class="name">Mastercard</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                </label>
+
+                <label for="paypal" class="paypalMethod">
+                    <div class="imgName">
+                        <div class="imgContainer paypal">
+                            <img src="https://i.ibb.co/KVF3mr1/paypal.png" alt="">
+                        </div>
+                        <span class="name">Paypal</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                </label>
+
+                <label for="mpesa" class="mpesaMethod">
+                    <div class="imgName">
+                        <div class="imgContainer mpesa">
+                            <img src="{{ url_for('static', path='img/mpesa.png') }}" alt="">
+                        </div>
+                        <span class="name">MPESA</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                </label>
+            </div>
+
+            <div class="form-action">
+                <button type="submit" class="btn">Checkout</button>
+                <button class="btn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+
+      <div class="payment-error-modal modal">
+         <div class="modal__content">
+            <div class="modal__header">
+               <h2>Payment Error</h2>
+               <button class="modal__close" onclick="closeModal()">
+                  <i class="ri-close-fill"></i>
+               </button>
+            </div>
+            <div class="modal__text">
+               <p>This payment method is curently under development. 
+                  Please use another payment provider.</p>
+            </div>
+            <div class="modal__actions">
+               <button class="modal__button btn" onclick="closeModal()">
+                  Close
+               </button>
+            </div>
+         </div>
+      </div>
+
+    <script src="js/payment_providers.js"></script>
+
+</body>
+
+</html>

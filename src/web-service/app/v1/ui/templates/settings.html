@@ -1,0 +1,13 @@
+{%extends "_base.html" %} 
+
+    {% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', path='css/settings.css') }}">
+    {% endblock %}
+
+{%block content%}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='js/settings.js') }}"></script>
+{% endblock %}

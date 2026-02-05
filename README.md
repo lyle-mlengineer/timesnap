@@ -2,8 +2,8 @@
 A web service for extracting timestamps from youtube videos.
 # SavannahFaces
 ## Overview
-<img src="./assets/timesnap.png" class="img-responsive" alt="">
-> This is a web service for generating realistic Kenyan faces. The user creates an account, logs into the account and then is able to generate realistic looking images by prompting our model.
+<img src="./assets/snaptube.png" class="img-responsive" alt="">
+> This is an easy to use web service used to extract timestamps from YouTube videos. Built to teach beginners the process of data collection and annotation for the pretraining, finetuning and deployment of a transformer based small language model.
 
 #### Application Demo
 1. The user signs up for an account

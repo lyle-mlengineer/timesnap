@@ -1,0 +1,88 @@
+{%extends "_base.html" %} 
+
+    {% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', path='css/apikeys.css') }}">
+    {% endblock %}
+
+{%block content%}
+
+<div class="table-header">
+    <h2>API Keys</h2>
+    <div class="upload-form">
+        <button class="upload-img btn">
+            <i class="bx bx-plus"></i>
+            <span>Create</span>
+        </button>
+    </div>
+</div>
+
+<div class="no-images">
+    <p class="no-images__text">You have no API keys</p>
+    
+</div>
+
+<div class="images">
+    <table>
+    <tbody>
+        <tr class="selected">
+            <td class="name">Test Key</td>
+            <td class="value">nnnnnnn</td>
+            <td class="date">2023-01-01</td>
+            <td class="status">
+                <span class="enabled">Active</span>
+            </td>
+            <td class="actions">
+                <i class="ri-delete-bin-5-line delete"></i>
+                <i class="ri-edit-line edit"></i>
+                <i class="ri-file-copy-line copy"></i>
+            </td>
+        </tr>
+        <tr class="selected">
+            <td class="name">Test Key</td>
+            <td class="value">nnnnnnn</td>
+            <td class="date">2023-01-01</td>
+            <td class="status">
+                <span class="enabled">Active</span>
+            </td>
+            <td class="actions">
+                <i class="ri-delete-bin-5-line delete"></i>
+                <i class="ri-edit-line edit"></i>
+                <i class="ri-file-copy-line copy"></i>
+            </td>
+        </tr>
+        <tr class="selected">
+            <td class="name">Test Key</td>
+            <td class="value">nnnnnnn</td>
+            <td class="date">2023-01-01</td>
+            <td class="status">
+                <span class="enabled">Active</span>
+            </td>
+            <td class="actions">
+                <i class="ri-delete-bin-5-line delete"></i>
+                <i class="ri-edit-line edit"></i>
+                <i class="ri-file-copy-line copy"></i>
+            </td>
+        </tr>
+        <tr class="selected">
+            <td class="name">Test Key</td>
+            <td class="value">nnnnnnn</td>
+            <td class="date">2023-01-01</td>
+            <td class="status">
+                <span class="disabled">InActive</span>
+            </td>
+            <td class="actions">
+                <i class="ri-delete-bin-5-line delete"></i>
+                <i class="ri-edit-line edit"></i>
+                <i class="ri-file-copy-line copy"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div> 
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='js/apikeys.js') }}"></script>
+{% endblock %}

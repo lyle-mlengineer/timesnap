@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
+       <!-- <link href='https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css' rel='stylesheet'> -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"> 
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/extraction.css">
+
+      <title>TimeSnap - Extract Timesatmps</title>
+   </head>
+   <body>
+      <!-- Sidebar bg -->
+      <img src="img/mountain-bg.png" alt="image" class="image-bg">
+
+      <!--=============== HEADER ===============-->
+      <header class="header">      
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>Plating</span>
+            </a>
+
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-apps-2-line"></i>
+            </button>
+         </div>  
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>Plating</span>
+            </div>
+
+            <div class="sidebar__content">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-dashboard-horizontal-line"></i>
+                  <span>Dashboard</span>
+               </a>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-folder-add-line"></i>
+                     <span>Create</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">Project</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Archives</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Imports</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-lock-line"></i>
+                     <span>Account</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">Metrics</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Administrator</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Payments</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Passwords</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-user-line"></i>
+                     <span>Profile</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">Activity</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">View Profile</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-notification-2-line"></i>
+                  <span>Notifications</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-shopping-cart-line"></i>
+                  <span>Products</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-settings-3-line"></i>
+                  <span>Settings</span>
+               </a>
+            </div>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main">
+         <div class="container">
+
+            <!-- TITLE -->
+            <h1 class="title">
+               <span><i class="ri-shield-flash-line title__icon"></i></span>
+                
+                <span class="title__text">AI Timestamps Extractor</span>
+            </h1> 
+
+            <div class="form-and-extraction">
+ 
+               <!-- FORM CONTAINER -->
+               <section class="form-container">
+                  <!-- URL INPUT -->
+                  <input type="url" name="url" id="url" class="form-container__url-input" placeholder="Enter video URL here..." required>
+
+                  <div class="form-container__actions">
+                     <!-- DROPDOWN RATIO -->
+                     <select class="form-container__dropdown" id="dropdownRatio">
+                           <option value="1:1">1:1</option>
+                           <option value="16:9">16:9</option>
+                           <option value="9:16">9:16</option>
+                     </select>
+
+                     <!-- GENERATE IMAGE BUTTON -->
+                     <button class="form-container__button btn" onclick="generateImage()">
+                        <!-- <i class="ri-shield-flash-line title__icon"></i> -->
+                        Extract Timestamps
+                     </button>
+
+                  </div>
+               </section>
+
+               <!-- EXTRACTED TIMESTAMPS CONTAINER -->
+               <section class="extraction-container show">
+                  <!-- LOADING CONTAINER -->
+                  <div class="extraction-container__loading-container">
+                     <div class="extraction-container__loading-spinner hidden"></div>
+                  </div>
+
+                  <!-- EXTRACTED TIMESTAMPS RESULT -->
+                  <div class="extraction-container__timestamps-result">
+                     <section class="image-container" id="imageContainer">
+                        <!-- IMAGE RESULT -->
+                        <div class="image-result hidden">
+                           <img class="image-container__image-result" id="imageResult" src="img/example.jpeg">
+                        </div>
+                        
+                        <div class="image-container__loading-container">
+                           <div class="image-container__loading-spinner hidden"></div>
+                        </div>
+
+                     <!-- ERROR MESSAGE -->
+                     <!-- <div class="image-container__error-message" id="errorMessage">
+                        <box-icon type='solid' name='error-circle'></box-icon>
+                        <span class="image-container__error-text" id="errorText">
+                           The YouTube video was not found.
+                        </span>
+                     </div> -->
+                        
+                     </section>
+                     <section class="timestamps-container" id="timestampsContainer">
+                        <div class="timestamps-container__loading-container hidden">
+                           <div class="timestamps-container__loading-spinner hidden"></div>
+                        </div>
+
+                        <!-- ERROR MESSAGE -->
+                        <!-- <div class="image-container__error-message" id="errorMessage">
+                           <box-icon type='solid' name='error-circle'></box-icon>
+                           <span class="image-container__error-text" id="errorText">
+                              An error occurred while extracting the timestamps.
+                           </span>
+                        </div> -->
+
+                     </section>
+                  </div>
+
+                  <!-- NO RESULT MESSAGE -->
+                  <!-- <div class="extraction-container__no-result-message">
+                     No timestamps extracted. Please try again.
+                  </div> -->
+
+                  <!-- EXTRACTION ACTIONS-->
+                  <div class="extraction-container__actions">
+                     <button class="extraction-container__copy-button btn" onclick="copyTimestamps()">
+                        <i class="ri-copy-line"></i>
+                        Copy Timestamps
+                     </button>
+                     <button class="extraction-container__download-button btn" onclick="downloadTimestamps()">
+                        <i class="ri-download-line"></i>
+                        Download Timestamps
+                     </button>
+                  </div>
+               </section>
+
+            </div>
+
+         </div>
+      </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="js/extraction.js"></script>
+   </body>
+</html>

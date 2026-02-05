@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <!-- BOX ICONS CSS-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+      <!--=============== CSS ===============-->
+      {% block styles %}{% endblock %}
+      <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+
+      <title>{{ title }}</title>
+   </head>
+   <body>
+      <!-- Sidebar bg -->
+      <img src="{{ url_for('static', path='img/mountain-bg.png') }}" alt="image" class="image-bg">
+
+      <!--=============== HEADER ===============-->
+      <header class="header">      
+         <div class="header__container">
+            <a href="/" class="header__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>SnapTube</span>
+            </a>
+
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-apps-2-line"></i>
+            </button>
+         </div>  
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>SnapTube</span>
+            </div>
+
+            <div class="sidebar__content">
+               <a href="/user_dashboard" class="sidebar__link {% if request.path == '/user_dashboard' %} active_link {% endif %}">
+                  <i class="ri-dashboard-horizontal-line"></i>
+                  <span>Dashboard</span>
+               </a>
+
+               <a href="/extract" class="sidebar__link {% if request.path == '/extract' %} active_link {% endif %}">
+                  <i class="ri-shield-flash-line"></i>
+                  <span>TimeSnap</span>
+               </a>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button {% if request.path == '/profile' or request.path == '/settings' %} active_link {% endif %}">
+                     <i class="ri-user-line"></i>
+                     <span>Profile</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="/profile" class="drop__item {% if request.path == '/profile' %} active_link {% endif %}">View Profile</a>
+                     </li>
+
+                     <li>
+                        <a href="/settings" class="drop__item {% if request.path == '/settings' %} active_link {% endif %}">Settings</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <a href="/notifications" class="sidebar__link {% if request.path == '/notifications' %} active_link {% endif %}">
+                  <i class="ri-notification-2-line"></i>
+                  <span>Notifications</span>
+               </a>
+
+               <a href="/purchase_credits" class="sidebar__link {% if request.path == '/purchase_credits' %} active_link {% endif %}">
+                  <i class="ri-shopping-cart-line"></i>
+                  <span>Purchase Credits</span>
+               </a>
+
+               <a href="/api_keys" class="sidebar__link {% if request.path == '/api_keys' %} active_link {% endif %}">
+                  <i class="ri-settings-3-line"></i>
+                  <span>API Keys</span>
+               </a>
+            </div>
+         </div>
+         <div class="sidebar__footer">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-logout-circle-line"></i>
+                  <span>Logout</span>
+               </a>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main">
+         <div class="container">
+
+            {% block content %}
+            {% endblock %}
+
+         </div>
+      </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="{{ url_for('static', path='js/base.js') }}"></script>
+
+      {% block scripts %}{% endblock %}
+   </body>
+</html>

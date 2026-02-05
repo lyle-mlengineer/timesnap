@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/timesnap.css">
+
+      <title>SnapTube</title>
+   </head>
+   <body>
+      <!-- Sidebar bg -->
+      <img src="img/mountain-bg.png" alt="image" class="image-bg">
+
+      <!--=============== HEADER ===============-->
+      <header class="header">      
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>SnapTube</span>
+            </a>
+
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-apps-2-line"></i>
+            </button>
+         </div>  
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>SnapTube</span>
+            </div>
+
+            <div class="sidebar__content">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-dashboard-horizontal-line"></i>
+                  <span>Dashboard</span>
+               </a>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-shopping-cart-line"></i>
+                     <span>Products</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">TimeSnap</a>
+                     </li>
+
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-lock-line"></i>
+                     <span>Account</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">Payments</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Bills</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-user-line"></i>
+                     <span>Profile</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">View Profile</a>
+                     </li>
+                     <li>
+                        <a href="#" class="drop__item">Passwords</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-notification-2-line"></i>
+                  <span>Notifications</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-shopping-cart-line"></i>
+                  <span>Pricing</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-settings-3-line"></i>
+                  <span>API Keys</span>
+               </a>
+            </div>
+         </div>
+         <div class="sidebar__footer">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-logout-circle-line"></i>
+                  <span>Logout</span>
+               </a>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main">
+         <div class="container">
+
+            <!-- TITLE -->
+            <h1 class="title">
+                <box-icon class="title__icon" type='solid' name='magic-wand'></box-icon>
+                <span class="title__text">AI Image Generator</span>
+            </h1>
+
+            <div class="form-and-extraction">
+
+               <!-- FORM CONTAINER -->
+               <section class="form-container">
+                  <!-- URL INPUT -->
+                  <input type="url" name="url" id="url" class="form-container__url-input" placeholder="Enter video URL here..." required>
+
+                  <div class="form-container__actions">
+                     <!-- DROPDOWN RATIO -->
+                     <select class="form-container__dropdown" id="dropdownRatio">
+                           <option value="1:1">1:1</option>
+                           <option value="16:9">16:9</option>
+                           <option value="9:16">9:16</option>
+                     </select>
+
+                     <!-- GENERATE IMAGE BUTTON -->
+                     <button class="form-container__button btn" onclick="generateImage()">
+                        <!-- <i class="ri-shield-flash-line title__icon"></i> -->
+                        Extract Timestamps
+                     </button>
+
+                  </div>
+               </section>
+
+               <!-- EXTRACTED TIMESTAMPS CONTAINER -->
+               <section class="extraction-container show">
+
+
+                  <!-- EXTRACTED TIMESTAMPS RESULT -->
+                  <div class="extraction-container__timestamps-result">
+
+                     <section class="image-container" id="imageContainer">
+
+                        <!-- IMAGE RESULT -->
+                        <div class="image-container__image-result show">
+                           <img class="image-container__image-result-image" id="imageResult" src="img/example.jpeg">
+                        </div>
+
+                        <div class="image-container__loading-container">
+                           <div class="image-container__loading-spinner"></div>
+                        </div>
+
+                        <!-- ERROR MESSAGE -->
+                        <div class="image-container__error-message" id="errorMessage">
+                           <box-icon type='solid' name='error-circle'></box-icon>
+                           <span class="image-container__error-text" id="errorText">
+                              The YouTube video was not found.
+                           </span>                           
+                        </div>
+
+                     </section>
+
+                     <section class="timestamps-container" id="timestampsContainer">
+                        <div class="image-container__loading-container show">
+                           <div class="image-container__loading-spinner"></div>
+                        </div>
+                     </section>
+
+                  </div>
+
+                  <!-- EXTRACTION ACTIONS-->
+                  <div class="extraction-container__actions">
+                     <button class="extraction-container__copy-button btn" onclick="copyTimestamps()">
+                        <i class="ri-copy-line"></i>
+                        Copy Timestamps
+                     </button>
+                     <button class="extraction-container__download-button btn" onclick="downloadTimestamps()">
+                        <i class="ri-download-line"></i>
+                        Download Timestamps
+                     </button>
+                  </div>
+
+               </section>
+
+            </div>
+
+         </div>
+      </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="js/timesnap.js"></script>
+   </body>
+</html>
