@@ -1,0 +1,41 @@
+Every Pytorch module begins with inheriting nn.Module. To make our framework as similar as possible, we will be implementing our own base nn.Module that we will be using for everything else to come! This is not that interesting a video, mostly just housekeeping and taking a look at what is going on inside frameworks like PyTorch!
+
+(sorry for the slightly broken voice, had a bit of a sore throat!)
+
+Previous Videos:
+Building an Array Mechanism:    • Lets Build our own PyTorch Part 1: Running...  
+Autograd From Scratch:    • Lets Build our own PyTorch Part 2: A Fully...  
+
+Timestamps:
+00:00:00 - Recap what we have done so far
+00:06:50 - Modules vs Functionals
+00:08:15 - Creating the package structure
+00:12:05 - Starting the Module Class
+00:15:00 - What is _dict_ in python classes
+00:16:45 - Python class inheritance and super()
+00:18:35 - Complete the _setattr_
+00:21:00 - Implement .parameters()
+00:24:11 - Python Generators
+00:26:09 - Accounting for parameter (weight) sharing
+00:29:00 - Implement non-deduplicated .parameters()
+00:30:30 - Implement normal and non-dedup  .named_parameters() 
+00:36:50 - Implement .register_buffer()
+00:38:00 - Persistent vs non-Persistent Buffers
+00:39:27 - Add in all other access methods for buffers
+00:39:58 - Implement .to() to move tensors btwn devices
+00:42:42 - Implement .apply() for future weight init
+00:14:15 - Implement _repr_ for pretty printing
+00:45:37 - Assign .forward() to __call__() method
+00:46:45 - Create the state_dict() method to get weights of model
+00:49:20 - Create the load_state_dict() method to load weights into model
+00:53:30 - Toggle train vs eval modes
+00:54:45 - Implement nn.ModuleList() and nn.Sequential()
+01:01:20 - What's next?
+
+Socials!
+X   / data_adventurer  
+Instagram   / nixielights  
+Linkedin   / priyammaz  
+Discord   / discord  
+🚀 Github: https://github.com/priyammaz
+🌐 Website: https://www.priyammazumdar.com/

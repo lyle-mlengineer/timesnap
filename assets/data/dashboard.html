@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/dashboard.css">
+
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <!-- Sidebar bg -->
+      <img src="img/mountain-bg.png" alt="image" class="image-bg">
+
+      <!--=============== HEADER ===============-->
+      <header class="header">      
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>Plating</span>
+            </a>
+
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-apps-2-line"></i>
+            </button>
+         </div>  
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>Plating</span>
+            </div>
+
+            <div class="sidebar__content">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-dashboard-horizontal-line"></i>
+                  <span>Dashboard</span>
+               </a>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-shopping-cart-line"></i>
+                     <span>Products</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">TimeSnap</a>
+                     </li>
+
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-lock-line"></i>
+                     <span>Account</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">Payments</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="drop__item">Bills</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="drop">
+                  <button class="sidebar__link drop__button">
+                     <i class="ri-user-line"></i>
+                     <span>Profile</span>
+                     <i class="ri-arrow-down-s-line drop__arrow"></i>
+                  </button>
+                  
+                  <ul class="drop__list">
+                     <li>
+                        <a href="#" class="drop__item">View Profile</a>
+                     </li>
+                     <li>
+                        <a href="#" class="drop__item">Passwords</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-notification-2-line"></i>
+                  <span>Notifications</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-shopping-cart-line"></i>
+                  <span>Pricing</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-settings-3-line"></i>
+                  <span>API Keys</span>
+               </a>
+            </div>
+         </div>
+         <div class="sidebar__footer">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-logout-circle-line"></i>
+                  <span>Logout</span>
+               </a>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main">
+         <div class="container">
+
+            <div class="table-header">
+               <h2>Datasets</h2>
+               <div class="upload-form">
+                     <button class="upload-img btn">
+                        <i class="bx bx-plus"></i>
+                        <span>Create Dataset</span>
+                     </button>
+               </div>
+            </div>
+
+            <div class="dataset_actions">
+
+               <div class="custome-input">
+                  <select class="form-container__dropdown" id="type">
+                     <option value="default">Default</option>
+                  </select>
+               </div>
+               <a href="#" class="upload-img btn">
+                     <i class="bx bx-plus"></i>
+                     <span>Extract Timestamps</span>
+               </a>
+            </div>
+
+            <div class="no-images">
+               <p class="no-images__text">You have no data sets</p>
+               
+            </div>
+
+            <div class="images">
+               <table>
+               <tbody>
+                     <tr class="selected">
+                        <td class="name">Test Key</td>
+                        <td class="value">nnnnnnn</td>
+                        <td class="date">2023-01-01</td>
+                        <td class="status">
+                           <span class="enabled">Active</span>
+                        </td>
+                        <td class="actions">
+                           <i class="ri-delete-bin-5-line delete"></i>       
+                           <i class="ri-eye-line edit"></i>
+                           <i class="ri-download-cloud-line copy"></i>
+                        </td>
+                     </tr>
+                     <tr class="selected">
+                        <td class="name">Test Key</td>
+                        <td class="value">nnnnnnn</td>
+                        <td class="date">2023-01-01</td>
+                        <td class="status">
+                           <span class="enabled">Active</span>
+                        </td>
+                        <td class="actions">
+                           <i class="ri-delete-bin-5-line delete"></i>
+                           <i class="ri-edit-line edit"></i>
+                           <i class="ri-file-copy-line copy"></i>
+                        </td>
+                     </tr>
+                     <tr class="selected">
+                        <td class="name">Test Key</td>
+                        <td class="value">nnnnnnn</td>
+                        <td class="date">2023-01-01</td>
+                        <td class="status">
+                           <span class="enabled">Active</span>
+                        </td>
+                        <td class="actions">
+                           <i class="ri-delete-bin-5-line delete"></i>
+                           <i class="ri-edit-line edit"></i>
+                           <i class="ri-file-copy-line copy"></i>
+                        </td>
+                     </tr>
+                     <tr class="selected">
+                        <td class="name">Test Key</td>
+                        <td class="value">nnnnnnn</td>
+                        <td class="date">2023-01-01</td>
+                        <td class="status">
+                           <span class="disabled">InActive</span>
+                        </td>
+                        <td class="actions">
+                           <i class="ri-delete-bin-5-line delete"></i>
+                           <i class="ri-edit-line edit"></i>
+                           <i class="ri-file-copy-line copy"></i>
+                        </td>
+                     </tr>
+               </tbody>
+            </table>
+
+            </div> 
+
+         </div>
+
+         <div class="delete-timestamp-modal modal">
+            <div class="modal__content">
+               <div class="modal__header">
+                  <h2>Delete Timestamp</h2>
+                  <button class="modal__close" onclick="closeModal()">
+                     <i class='bx  bx-x'></i> 
+                  </button>
+               </div>
+               <div class="modal__text">
+                  <p>Are you sure you want to delete this timestamp?</p>
+               </div>
+               <div class="modal__actions">
+                  <button class="modal__button btn" onclick="closeModal()">
+                     <i class='bx  bx-check'></i>
+                     Delete
+                  </button>
+                  <button class="modal__button btn" onclick="closeModal()">
+                     <i class='bx  bx-x'></i>
+                     Close
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <div class="view-timestamp-modal modal">
+            <div class="modal__content">
+               <div class="modal__header">
+                  <h2>View Timestamp</h2>
+                  <button class="modal__close" onclick="closeModal()">
+                     <i class='bx  bx-x'></i> 
+                  </button>
+               </div>
+               <div class="modal__text">
+                     <pre class="description" id="timestamps">
+                     </pre>
+               </div>
+               <div class="modal__actions">
+                  <button class="modal__button btn" onclick="closeModal()">
+                     <i class='bx  bx-x'></i>
+                     Close
+                  </button>
+               </div>
+            </div>
+         </div>
+
+      </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="js/dashboard.js"></script>
+   </body>
+</html>

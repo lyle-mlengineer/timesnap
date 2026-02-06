@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/timestamps.css">
+
+      <title>TimeSnap Data</title>
+   </head>
+   <body>
+      <!-- Sidebar bg -->
+      <img src="img/mountain-bg.png" alt="image" class="image-bg">
+
+      <!--=============== HEADER ===============-->
+      <header class="header">      
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>TimeSnap</span>
+            </a>
+
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-apps-2-line"></i>
+            </button>
+         </div>  
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__logo">
+               <i class="ri-shield-flash-line"></i>
+               <span>TimeSnap</span>
+            </div>
+
+            <div class="sidebar__content">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-dashboard-horizontal-line"></i>
+                  <span>Dashboard</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-quill-pen-ai-line"></i>
+                  <span>Extract</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-database-2-fill"></i>
+                  <span>Datasets</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-user-line"></i>
+                  <span>Profile</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-notification-2-line"></i>
+                  <span>Notifications</span>
+               </a>
+
+               <a href="#" class="sidebar__link">
+                  <i class="ri-settings-3-line"></i>
+                  <span>Settings</span>
+               </a>
+
+               
+            </div>
+         </div>
+         <div class="sidebar__footer">
+               <a href="#" class="sidebar__link">
+                  <i class="ri-logout-circle-line"></i>
+                  <span>Logout</span>
+               </a>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main">
+         <div class="container">
+
+            <!-- TITLE -->
+            <div class="title">
+               <div class="title__logo">
+                  <box-icon class="title__icon" type='solid' name='magic-wand'></box-icon>
+                  <span class="title__text">Extract Timestamps</span>
+               </div>
+
+               <div class="title__action">
+                  <a href="#" class="btn">
+                     Create Dataset
+                  </a>
+               </div>
+                
+            </div>
+
+            <div class="form-and-extraction">
+
+               <form>
+                     <label for="dataset">Dataset Name:</label>
+                     <div class="custome-input">
+                        <select class="form-container__dropdown" id="dataset">
+                           <option value="default">Default</option>
+                        </select>
+                        <!-- <input type="email" name="email" placeholder="Your Email" autocomplete="off">
+                        <i class='bx bx-at'></i> -->
+                     </div>
+                     <label for="type">Type:</label>
+                     <div class="custome-input">
+                        <select class="form-container__dropdown" id="type">
+                           <option value="video">YouTube Video</option>
+                           <option value="playlist">YouTube Playlist</option>
+                           <option value="channel">YouTube Channel</option>
+                        </select>
+                     </div>
+                     <label for="url">Link:</label>
+                     <div class="custome-input">
+                        <input type="url" name="url" placeholder="Enter video URL here..." autocomplete="off">
+                        <i class='bx bx-lock-alt'></i>
+                     </div>
+                     
+
+                     <section class="image-container" id="imageContainer">
+                        <button class="btn find-btn">Find</button>
+                        <!-- IMAGE RESULT -->
+                        <div class="image-result">
+                           <img class="image-container__image-result" id="imageResult" src="img/example.jpeg">
+                        </div>
+                        
+                        <div class="image-container__loading-container">
+                           <div class="image-container__loading-spinner"></div>
+                        </div>
+
+                        <!-- ERROR MESSAGE -->
+                        <div class="image-container__error-message" id="errorMessage">
+                           <box-icon type='solid' name='error-circle'></box-icon>
+                           <span class="image-container__error-text" id="errorText">
+                              The YouTube video was not found.
+                           </span>
+                        </div>
+
+                        <button class="submit-btn btn">Extract</button>
+                        
+                     </section>
+
+                     
+
+               </form>
+
+            </div>
+
+         </div>
+      </main>
+
+         <div class="create-dataset-modal">
+            <div class="modal__content">
+               <div class="modal__header">
+                  <h2>Create Dataset</h2>
+                  <button class="modal__close" onclick="closeModal()">
+                     <i class='bx  bx-x'></i> 
+                  </button>
+               </div>
+               <div class="modal__form">
+                  <div class="form__item">
+                     <label for="name" class="label">Dataset Name:</label>
+                     <div class="custome-input">
+                        <input type="text" name="name" id="name" placeholder="Dataset Name" autocomplete="off">
+                        <i class='bx bx-lock-alt'></i>
+                     </div> 
+                  </div>
+                  <div class="form__item">
+                     <label for="description" class="label">Dataset Description:</label>
+                     <div class="custome-input">
+                        <textarea name="" id="" cols="10" class="description"></textarea>
+                     </div> 
+                  </div>
+               </div>
+               <div class="modal__actions">
+                  <button class="modal__button btn" onclick="closeModal()">
+                     <i class='bx  bx-check'></i>
+                     Create
+                  </button>
+                  <button class="modal__button btn" onclick="closeModal()">
+                     <i class='bx  bx-x'></i>
+                     Close
+                  </button>
+               </div>
+            </div>
+         </div>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="js/timestamps.js"></script>
+   </body>
+</html>
