@@ -17,18 +17,19 @@
     <!-- FORM CONTAINER -->
     <section class="form-container">
         <!-- URL INPUT -->
-        <input type="url" name="url" id="url" class="form-container__url-input" placeholder="Enter video URL here..." required>
+        <input type="url" name="url" id="urlInput" class="form-container__url-input" 
+        placeholder="Enter video URL here..." required>
 
         <div class="form-container__actions">
             <!-- DROPDOWN RATIO -->
-            <select class="form-container__dropdown" id="dropdownRatio">
-                <option value="1:1">1:1</option>
-                <option value="16:9">16:9</option>
-                <option value="9:16">9:16</option>
+            <select class="form-container__dropdown" id="styleDropdown">
+                {% for style in all_styles %}
+                    <option value="{{ style }}">{{ style|capitalize }}</option>
+                {% endfor %}
             </select>
 
             <!-- GENERATE IMAGE BUTTON -->
-            <button class="form-container__button btn" onclick="generateImage()">
+            <button class="form-container__button btn" onclick="findYouTubeVideo()">
             <!-- <i class="ri-shield-flash-line title__icon"></i> -->
             Extract Timestamps
             </button>
@@ -37,7 +38,7 @@
     </section>
 
     <!-- EXTRACTED TIMESTAMPS CONTAINER -->
-    <section class="extraction-container show">
+    <section class="extraction-container" id="extractionContainer">
 
 
         <!-- EXTRACTED TIMESTAMPS RESULT -->
@@ -46,11 +47,11 @@
             <section class="image-container" id="imageContainer">
 
             <!-- IMAGE RESULT -->
-            <div class="image-container__image-result show">
-                <img class="image-container__image-result-image" id="imageResult" src="{{ url_for('static', path='img/example.jpeg') }}">
+            <div class="image-container__image-result" id="imageResultContainer">
+                <img class="image-container__image-result-image" id="imageResult" src="">
             </div>
 
-            <div class="image-container__loading-container">
+            <div class="image-container__loading-container" id="loadingContainer">
                 <div class="image-container__loading-spinner"></div>
             </div>
 
@@ -65,22 +66,23 @@
             </section>
 
             <section class="timestamps-container" id="timestampsContainer">
-            <div class="image-container__loading-container">
+            <div class="image-container__loading-container" id="timestampsLoadingContainer">
                 <div class="image-container__loading-spinner"></div>
             </div>
+            <pre id="timestampsPre"></pre>
             </section>
 
         </div>
 
         <!-- EXTRACTION ACTIONS-->
-        <div class="extraction-container__actions">
-            <button class="extraction-container__copy-button btn" onclick="copyTimestamps()">
+        <div class="extraction-container__actions" id="extractionActions">
+            <button class="extraction-container__copy-button btn" onclick="copyTimestamps()" id="copyTimestampsButton">
             <i class="ri-copy-line"></i>
             Copy Timestamps
             </button>
-            <button class="extraction-container__download-button btn" onclick="downloadTimestamps()">
-            <i class="ri-download-line"></i>
-            Download Timestamps
+            <button class="extraction-container__download-button btn" onclick="downloadTimestamps()" id="downloadTimestampsButton">
+                <i class="ri-download-line"></i>
+                Download Timestamps
             </button>
         </div>
 

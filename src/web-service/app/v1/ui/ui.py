@@ -2,6 +2,7 @@ from fastapi import status
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
+from pygments.styles import get_all_styles
 
 import logging
 
@@ -57,7 +58,7 @@ async def get_extract_timestamps(request: Request):
         {
             "request": request,
             "title": "Extract Timestamps",
-            "page": "extract"
+            "all_styles": list(get_all_styles())
         } 
     )
 

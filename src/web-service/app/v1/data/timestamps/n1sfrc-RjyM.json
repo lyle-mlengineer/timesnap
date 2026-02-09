@@ -1,0 +1,111 @@
+{
+    "video_id": "n1sfrc-RjyM",
+    "title": "OpenClaw Full Tutorial for Beginners \u2013 How to Set Up and Use OpenClaw (ClawdBot / MoltBot)",
+    "timestamps": [
+        {
+            "timestamp": "00:00",
+            "title": "Course Introduction & Overview"
+        },
+        {
+            "timestamp": "01:08",
+            "title": "Prerequisites & Basic Requirements"
+        },
+        {
+            "timestamp": "02:02",
+            "title": "Module Roadmap"
+        },
+        {
+            "timestamp": "02:44",
+            "title": "Understanding the Gateway Concept"
+        },
+        {
+            "timestamp": "03:49",
+            "title": "Installation & Environment Setup"
+        },
+        {
+            "timestamp": "05:05",
+            "title": "Security Warning & Risk Mitigation"
+        },
+        {
+            "timestamp": "06:58",
+            "title": "Onboarding Wizard & Configuration"
+        },
+        {
+            "timestamp": "09:40",
+            "title": "Network & Remote Access Options"
+        },
+        {
+            "timestamp": "11:36",
+            "title": "Initializing Skills & Hooks"
+        },
+        {
+            "timestamp": "14:53",
+            "title": "Meeting Your AI Agent (Nova)"
+        },
+        {
+            "timestamp": "16:11",
+            "title": "Security Audits & Health Checks (CLI)"
+        },
+        {
+            "timestamp": "17:46",
+            "title": "Exploring the Workspace & Memory Files"
+        },
+        {
+            "timestamp": "19:51",
+            "title": "GitHub Sync & Persistent Configuration"
+        },
+        {
+            "timestamp": "22:00",
+            "title": "Pinchboard: Social Media for Agents"
+        },
+        {
+            "timestamp": "25:07",
+            "title": "Setting Up a Personal Assistant"
+        },
+        {
+            "timestamp": "26:47",
+            "title": "WhatsApp Integration & Setup"
+        },
+        {
+            "timestamp": "29:43",
+            "title": "Automating Tasks via Messaging"
+        },
+        {
+            "timestamp": "31:31",
+            "title": "Discord Bot Integration & Setup"
+        },
+        {
+            "timestamp": "36:56",
+            "title": "Understanding Agent Skills (YAML & Markdown)"
+        },
+        {
+            "timestamp": "39:21",
+            "title": "Clawhub: Installing ThirdParty Skills"
+        },
+        {
+            "timestamp": "40:35",
+            "title": "Building a Custom Email Skill"
+        },
+        {
+            "timestamp": "43:51",
+            "title": "MultiAgent Management & Switching"
+        },
+        {
+            "timestamp": "47:04",
+            "title": "Deep Dive into Sandbox Modes"
+        },
+        {
+            "timestamp": "50:52",
+            "title": "Implementing DockerBased Sandboxing"
+        },
+        {
+            "timestamp": "53:11",
+            "title": "Testing Sandbox Restrictions"
+        },
+        {
+            "timestamp": "54:26",
+            "title": "Closing Thoughts & Next Steps"
+        }
+    ],
+    "thumbnail_url": "https://i.ytimg.com/vi/n1sfrc-RjyM/sddefault.jpg"
+}

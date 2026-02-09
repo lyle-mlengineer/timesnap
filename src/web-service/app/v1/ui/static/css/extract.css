@@ -273,7 +273,7 @@ nav{
     border-radius: 12px;
     width: min(100%, 800px);
     height: fit-content;
-    max-height: 90%;
+    max-height: 100%;
     overflow: auto;
 }
 
@@ -412,15 +412,17 @@ nav{
   width: 100%;
   /* border: solid green; */
   display: none;
-  max-height: 300px;
+  /* max-height: 300px; */
   overflow: hidden;
   /* height: 300px; */
+  height: 100%;
 }
 
 .image-container__image-result-image{
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  /* object-position: center; */
 }
 
 .image-container__image-result.show{
@@ -478,9 +480,13 @@ nav{
 
 .extraction-container__actions{
     margin-top: 12px;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 8px;
+    display: none;
+}
+
+.extraction-container__actions.show{
+    display: grid;
 }
 
 .extraction-container__actions.disabled button{

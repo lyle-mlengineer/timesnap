@@ -49,6 +49,13 @@ class Config(BaseSettings):
     GOOGLE_CLIENT_ID: str = os.environ["GOOGLE_CLIENT_ID"]
     GOOGLE_CLIENT_SECRET: str = os.environ["GOOGLE_CLIENT_SECRET"]
 
+    YOUTUBE_CREDENTIALS_PATH: str = os.getenv(
+    "YOUTUBE_CREDENTIALS_PATH", "/home/lyle/.youtube/credentials.json"
+    )
+    CLIENT_SECRET_FILE: str = os.environ.get(
+        "CLIENT_SECRET_FILE", "/home/lyle/Downloads/secret.json"
+    )
+
     HTTP_ONLY: bool = os.environ.get("HTTP_ONLY", True)
     SAMESITE: str = os.environ.get("SAMESITE", "lax")
     MAX_AGE: int = os.environ.get("MAX_AGE", 300)

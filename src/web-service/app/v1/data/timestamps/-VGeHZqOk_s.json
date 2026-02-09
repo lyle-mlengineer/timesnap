@@ -1,0 +1,51 @@
+{
+    "video_id": "-VGeHZqOk_s",
+    "title": "Why are diffusion LLMs so fast?",
+    "timestamps": [
+        {
+            "timestamp": "00:00",
+            "title": "Intro"
+        },
+        {
+            "timestamp": "02:00",
+            "title": "Autoregressive vs diffusion LLMs"
+        },
+        {
+            "timestamp": "03:06",
+            "title": "Reducing refinement steps"
+        },
+        {
+            "timestamp": "05:54",
+            "title": "SelfDistillation Through Time"
+        },
+        {
+            "timestamp": "07:15",
+            "title": "Curriculum learning"
+        },
+        {
+            "timestamp": "08:17",
+            "title": "Speeding up sampling"
+        },
+        {
+            "timestamp": "09:40",
+            "title": "Confidence scores"
+        },
+        {
+            "timestamp": "11:35",
+            "title": "Guided diffusion (FlashDLM)"
+        },
+        {
+            "timestamp": "13:24",
+            "title": "Approximate KV caching (dLLMCache, dKVCache)"
+        },
+        {
+            "timestamp": "19:03",
+            "title": "Block diffusion"
+        },
+        {
+            "timestamp": "21:19",
+            "title": "Where to find diffusion models"
+        }
+    ],
+    "thumbnail_url": "https://i.ytimg.com/vi/-VGeHZqOk_s/sddefault.jpg"
+}

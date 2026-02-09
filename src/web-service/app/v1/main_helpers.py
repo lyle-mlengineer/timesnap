@@ -14,6 +14,7 @@ from app.v1.core.config import config
 # from app.v1.api import payment_router 
 # from app.v1.api import oauth_router
 from app.v1.ui import ui
+from app.v1.api import extraction_router
 # from app.v1.api import audio_router
 from app.v1.exception_handlers import register_exception_handlers
 # from app.v1.services.oauth_service import OAuthService
@@ -57,6 +58,7 @@ def register_routers(app: FastAPI):
     # app.include_router(generation_router.router, prefix=f"/api/{api_version}")
     # app.include_router(payment_router.router, prefix=f"/api/{api_version}", include_in_schema=False)
     app.include_router(ui.router, include_in_schema=False)
+    app.include_router(extraction_router.router, prefix=f"/api/{api_version}")
     # app.include_router(oauth_router.router, prefix=f"/api/{api_version}")
     # app.include_router(audio_router.router, prefix=f"/api/{api_version}")
 
