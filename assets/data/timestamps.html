@@ -158,41 +158,61 @@
          </div>
       </main>
 
-         <div class="create-dataset-modal">
-            <div class="modal__content">
-               <div class="modal__header">
-                  <h2>Create Dataset</h2>
-                  <button class="modal__close" onclick="closeModal()">
-                     <i class='bx  bx-x'></i> 
-                  </button>
+      <div class="create-dataset-modal modal">
+         <div class="modal__content">
+            <div class="modal__header">
+               <h2>Create Dataset</h2>
+               <button class="modal__close" onclick="closeModal()">
+                  <i class='bx  bx-x'></i> 
+               </button>
+            </div>
+            <div class="modal__form">
+               <div class="form__item">
+                  <label for="name" class="label">Dataset Name:</label>
+                  <div class="custome-input">
+                     <input type="text" name="name" id="name" placeholder="Dataset Name" autocomplete="off">
+                     <i class='bx bx-lock-alt'></i>
+                  </div> 
                </div>
-               <div class="modal__form">
-                  <div class="form__item">
-                     <label for="name" class="label">Dataset Name:</label>
-                     <div class="custome-input">
-                        <input type="text" name="name" id="name" placeholder="Dataset Name" autocomplete="off">
-                        <i class='bx bx-lock-alt'></i>
-                     </div> 
-                  </div>
-                  <div class="form__item">
-                     <label for="description" class="label">Dataset Description:</label>
-                     <div class="custome-input">
-                        <textarea name="" id="" cols="10" class="description"></textarea>
-                     </div> 
-                  </div>
-               </div>
-               <div class="modal__actions">
-                  <button class="modal__button btn" onclick="closeModal()">
-                     <i class='bx  bx-check'></i>
-                     Create
-                  </button>
-                  <button class="modal__button btn" onclick="closeModal()">
-                     <i class='bx  bx-x'></i>
-                     Close
-                  </button>
+               <div class="form__item">
+                  <label for="description" class="label">Dataset Description:</label>
+                  <div class="custome-input">
+                     <textarea name="" id="" cols="10" class="description"></textarea>
+                  </div> 
                </div>
             </div>
+            <div class="modal__actions">
+               <button class="modal__button btn" onclick="closeModal()">
+                  <i class='bx  bx-check'></i>
+                  Create
+               </button>
+               <button class="modal__button btn" onclick="closeModal()">
+                  <i class='bx  bx-x'></i>
+                  Close
+               </button>
+            </div>
          </div>
+      </div>
+
+      <div class="extract-timestamp-modal modal">
+         <div class="modal__content">
+            <div class="modal__header">
+               <h2>Extract Timestamp</h2>
+               <button class="modal__close" onclick="closeModal()">
+                  <i class='bx  bx-x'></i> 
+               </button>
+            </div>
+            <div class="modal__text">
+               <p>This video was already processed</p>
+            </div>
+            <div class="modal__actions">
+               <button class="modal__button btn" onclick="closeModal()">
+                  <i class='bx  bx-x'></i>
+                  Close
+               </button>
+            </div>
+         </div>
+      </div>
       
       <!--=============== MAIN JS ===============-->
       <script src="js/timestamps.js"></script>
