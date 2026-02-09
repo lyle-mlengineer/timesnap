@@ -16,3 +16,4 @@ pwdlib[argon2]
 redis
 celery[redis]
 pygments
+tubectrl
